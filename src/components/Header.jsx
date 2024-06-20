@@ -21,7 +21,7 @@ function App() {
                   href="/"
                   className="flex gap-1 font-bold text-pink-500 items-center "
                 >                
-                  <span className="md:text-2xl text-xl">Carrer Girl Global</span>
+                  <span className="md:text-2xl text-lg">Carrer Girl Global</span>
                 </a>
               </div>
 
@@ -33,10 +33,11 @@ function App() {
               </div>
             </div>
 
-            <div className=" xs:flex items-center flex gap-10">
-              <button className="rounded-full border-solid border-2 py-2 px-8 text-white bg-pink-500 hover:bg-pink-600">
-                Get Started
-              </button>
+            <div className=" xs:flex items-center flex md:gap-10 gap-2">
+            <button className="rounded-full border-solid border-2 py-2 px-4 md:px-8 text-white bg-pink-500 hover:bg-pink-600">
+  Get Started
+</button>
+
 
               <div className="lg:hidden flex items-center">
                 <button onClick={() => setToggleMenu(!toggleMenu)}>
