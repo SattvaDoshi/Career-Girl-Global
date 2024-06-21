@@ -35,7 +35,7 @@ const AboutSection = () => {
       { 
         opacity: 1, 
         y: 0, 
-        duration: 1,
+        duration: 2,
         stagger: 0.2,
         scrollTrigger: {
           trigger: section,

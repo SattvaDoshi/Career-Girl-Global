@@ -19,11 +19,11 @@ const Services = () => {
       { 
         opacity: 1, 
         y: 0, 
-        duration: 0.8,
+        duration: 1,
         ease: "power3.out",
         scrollTrigger: {
           trigger: section,
-          start: "top 80%",
+          start: "top 50%",
           end: "top 50%",
           toggleActions: "play none none reverse"
         }
@@ -36,11 +36,11 @@ const Services = () => {
         { 
           opacity: 1, 
           y: 0,
-          duration: 0.6,
+          duration: 2,
           ease: "power3.out",
           scrollTrigger: {
             trigger: card,
-            start: "top 85%",
+            start: "top 65%",
             end: "top 65%",
             toggleActions: "play none none reverse"
           },

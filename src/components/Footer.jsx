@@ -13,11 +13,11 @@ const Footer = () => {
         <p className="text-sm text-pink-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-pink-500 sm:py-2 sm:mt-0 mt-4">
           © 2023 Career Girl Global —
           <a href="" className="text-pink-600 ml-1" target="_blank" rel="noopener noreferrer">
-            @abc.mail
+          careergirlglobal@gmail.com 
           </a>
         </p>
         <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-          <a href="https://facebook.com" className="text-pink-500">
+          {/* <a href="https://facebook.com" className="text-pink-500">
             <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
               <path d="M18 2h-3c-1.1 0-2 .9-2 2v3H9v4h4v8h4v-8h3l1-4h-4V4h4z"></path>
             </svg>
@@ -26,14 +26,14 @@ const Footer = () => {
             <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
               <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.43 1a9 9 0 0 1-2.88 1.1 4.48 4.48 0 0 0-7.64 4.1A12.7 12.7 0 0 1 1.64 2 4.48 4.48 0 0 0 3 9.72a4.48 4.48 0 0 1-2-.56v.06a4.48 4.48 0 0 0 3.6 4.4 4.48 4.48 0 0 1-2 .07 4.48 4.48 0 0 0 4.18 3.1A9 9 0 0 1 1 20.54a12.7 12.7 0 0 0 6.88 2"></path>
             </svg>
-          </a>
-          <a href="https://instagram.com" className="ml-3 text-pink-500">
+          </a> */}
+          <a href="https://www.instagram.com/careergirlglobal/" className="ml-3 text-pink-500">
             <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
               <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
               <path d="M16 11.37a4 4 0 1 1-7.44-1.87 4 4 0 0 1 7.44 1.87zm1.5-4.37h.01"></path>
             </svg>
           </a>
-          <a href="https://linkedin.com" className="ml-3 text-pink-500">
+          <a href="https://www.linkedin.com/company/career-girl-global/" className="ml-3 text-pink-500">
             <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="0" className="w-5 h-5" viewBox="0 0 24 24">
               <path stroke="none" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path>
               <circle cx="4" cy="4" r="2" stroke="none"></circle>

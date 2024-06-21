@@ -20,11 +20,11 @@ const Contact = () => {
       { 
         opacity: 1, 
         y: 0, 
-        duration: 0.8,
+        duration: 1,
         stagger: 0.2,
         scrollTrigger: {
           trigger: section,
-          start: "top 70%",
+          start: "top 60%",
           end: "top 30%",
           scrub: 1,
         }
@@ -36,7 +36,7 @@ const Contact = () => {
       { 
         opacity: 1, 
         x: 0, 
-        duration: 0.8,
+        duration: 1.5,
         stagger: 0.2,
         scrollTrigger: {
           trigger: section,
@@ -58,8 +58,8 @@ const Contact = () => {
               <h2 className="text-3xl font-bold">Let's Work Together</h2>
             </div>
             <div className="mt-20">
-              <p>San Francisco, CA</p>
-              <p>info@girlsoncampus.org</p>
+              <p>Mumbai</p>
+              <p>careergirlglobal@gmail.com</p>
               <p>For partnerships and collaborations please fill out the form.</p>
             </div>
           </div>

@@ -11,7 +11,7 @@ const GirlsOnCampus = () => {
       gsap.from(".animate-in", {
         y: 50,
         opacity: 0,
-        duration: 1,
+        duration: 2,
         stagger: 0.2,
         ease: "power3.out"
       });
@@ -20,7 +20,7 @@ const GirlsOnCampus = () => {
       gsap.from(".logo", {
         x: 100,
         opacity: 0,
-        duration: 1,
+        duration: 2,
         ease: "power3.out"
       });
 

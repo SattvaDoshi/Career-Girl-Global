@@ -23,7 +23,7 @@ const JoinCommunity = () => {
         stagger: 0.2,
         scrollTrigger: {
           trigger: section,
-          start: "top 70%",
+          start: "top 50%",
           end: "top 30%",
           scrub: 1,
         }
@@ -31,11 +31,11 @@ const JoinCommunity = () => {
     );
 
     gsap.fromTo(image, 
-      { opacity: 0, x: 100 },
+      { opacity: 0, x: 50 }, // Reduced x value from 100 to 50
       { 
         opacity: 1, 
         x: 0, 
-        duration: 1,
+        duration: 2,
         scrollTrigger: {
           trigger: section,
           start: "top 50%",
@@ -48,7 +48,7 @@ const JoinCommunity = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="min-h-screen md:mt-0 mt-16 py-16 md:py-32 px-4 md:px-8 flex flex-col md:flex-row w-full">
+    <div ref={sectionRef} className="min-h-screen md:mt-0 mt-16 py-16 md:py-32 px-4 md:px-8 flex flex-col md:flex-row w-full overflow-hidden">
       <div ref={textContentRef} className="md:w-1/2 flex flex-col justify-center items-center bg-white p-8 md:p-16 rounded-lg shadow-2xl">
         <h1 className="text-4xl md:text-5xl font-bold text-pink-600 mb-4">Join Our Community</h1>
         <p className="text-lg md:text-xl text-gray-700 mb-8 text-center">
@@ -58,7 +58,7 @@ const JoinCommunity = () => {
           Join Community
         </button>
       </div>
-      <div ref={imageRef} className="md:w-1/2 mt-8 md:mt-0 relative shadow-2xl">
+      <div ref={imageRef} className="md:w-1/2 mt-8 md:mt-0 relative shadow-2xl overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
           alt="Laptops on a table"
