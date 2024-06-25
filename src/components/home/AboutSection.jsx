@@ -1,4 +1,4 @@
-import yourImage from './images/founder.jpeg';
+import yourImage from '../images/founder.jpeg';
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';

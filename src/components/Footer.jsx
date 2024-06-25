@@ -13,7 +13,7 @@ const Footer = () => {
         <p className="text-sm text-pink-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-pink-500 sm:py-2 sm:mt-0 mt-4">
           © 2023 Career Girl Global —
           <a href="" className="text-pink-600 ml-1" target="_blank" rel="noopener noreferrer">
-          careergirlglobal@gmail.com 
+            careergirlglobal@gmail.com
           </a>
         </p>
         <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">

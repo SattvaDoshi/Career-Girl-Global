@@ -1,3 +1,140 @@
+// import React, { useLayoutEffect, useRef, useState } from "react";
+// import { gsap } from "gsap";
+// import { PaperAirplaneIcon, Bars3Icon } from "@heroicons/react/24/outline";
+// import logo from './images/your-logo.png';
+
+// function App() {
+//   const [toggleMenu, setToggleMenu] = useState(false);
+//   const app = useRef(null);
+//   const navItems = useRef([]);
+//   const mobileMenuRef = useRef(null);
+
+//   useLayoutEffect(() => {
+//     let ctx = gsap.context(() => {
+//       // Animate nav items
+//       gsap.from(navItems.current, {
+//         opacity: 0,
+//         y: -20,
+//         stagger: 0.1,
+//         duration: 0.8,
+//         ease: "power3.out"
+//       });
+
+//       // Animate logo
+//       gsap.from(".logo", {
+//         opacity: 0,
+//         x: -50,
+//         duration: 1,
+//         ease: "power3.out"
+//       });
+
+//       // Animate button
+//       gsap.from(".get-started-btn", {
+//         opacity: 0,
+//         scale: 0.5,
+//         duration: 0.8,
+//         ease: "back.out(1.7)"
+//       });
+
+//     }, app);
+
+//     return () => ctx.revert();
+//   }, []);
+
+//   useLayoutEffect(() => {
+//     if (mobileMenuRef.current) {
+//       gsap.to(mobileMenuRef.current, {
+//         height: toggleMenu ? "auto" : 0,
+//         duration: 0.5,
+//         ease: "power3.inOut"
+//       });
+
+//       if (toggleMenu) {
+//         gsap.from(".mobile-nav-item", {
+//           opacity: 0,
+//           y: 20,
+//           stagger: 0.1,
+//           duration: 0.5,
+//           ease: "power3.out"
+//         });
+//       }
+//     }
+//   }, [toggleMenu]);
+
+//   return (
+//     <div ref={app} className="app">
+//       <nav className="bg-gradient-to-r from-pink-200 to-purple-200">
+//         <div className="mx-auto">
+//           <div className="flex mx-auto justify-between w-5/6 ">
+//             <div className="flex items-center gap-16 my-8">
+//               <div>
+//                 <a
+//                   href="/"
+//                   className="logo flex gap-1 font-bold text-pink-500 items-center "
+//                 >
+//                   <span className="md:text-2xl text-lg">Career Global Girl</span>
+//                 </a>
+//               </div>
+
+//               <div className="hidden lg:flex gap-8 ">
+//                 {["Home", "Benefits", "Blog", "About Us"].map((item, index) => {
+//                   let href;
+//                   switch (item) {
+//                     case "Home":
+//                       href = "/";
+//                       break;
+//                     case "Benefits":
+//                       href = "/benefits";
+//                       break;
+//                     case "Blog":
+//                       href = "/blog";
+//                       break;
+//                     case "About Us":
+//                       href = "/about-us";
+//                       break;
+//                     default:
+//                       href = "#";
+//                   }
+//                   return (
+//                     <a key={index} href="#" className="hover:underline text-lg" ref={el => navItems.current[index] = el}>{item}</a>
+//                   )}}
+//               </div>
+//             </div>
+
+//             <div className="xs:flex items-center flex md:gap-10 gap-2">
+//               <button className="get-started-btn rounded-full border-solid border-2 py-2 px-4 md:px-8 text-white bg-pink-500 hover:bg-pink-600">
+//                 Get Started
+//               </button>
+
+//               <div className="lg:hidden flex items-center">
+//                 <button onClick={() => setToggleMenu(!toggleMenu)}>
+//                   <Bars3Icon className="h-6" />
+//                 </button>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//         <div
+//           ref={mobileMenuRef}
+//           className={`fixed z-40 w-full bg-gradient-to-r from-pink-200 to-purple-200 overflow-hidden 
+//             flex flex-col lg:hidden gap-12 origin-top`}
+//         >
+//           <div className="px-8">
+//             <div className="flex flex-col gap-8 font-bold tracking-wider">
+//               {["Features", "Pricing", "Download", "Classic"].map((item, index) => (
+//                 <a key={index} href="#" className="mobile-nav-item">{item}</a>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+//       </nav>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { PaperAirplaneIcon, Bars3Icon } from "@heroicons/react/24/outline";
@@ -72,17 +209,36 @@ function App() {
                   href="/"
                   className="logo flex gap-1 font-bold text-pink-500 items-center "
                 >                
-                  <span className="md:text-2xl text-lg">Career Girl Global</span>
+                  <span className="md:text-2xl text-lg">Career Global Girl</span>
                 </a>
               </div>
 
               <div className="hidden lg:flex gap-8 ">
-                {["Home", "Benefits", "Our Classes", "Contact Us"].map((item, index) => (
-                  <a key={index} href="#" className="hover:underline text-lg" ref={el => navItems.current[index] = el}>{item}</a>
-                ))}
+                {["Home", "Benefits", "Blog", "About Us"].map((item, index) => {
+                  let href;
+                  switch (item) {
+                    case "Home":
+                      href = "/";
+                      break;
+                    case "Benefits":
+                      href = "/benefits";
+                      break;
+                    case "Blog":
+                      href = "/blog";
+                      break;
+                    case "About Us":
+                      href = "/about-us";
+                      break;
+                    default:
+                      href = "#";
+                  }
+                  return (
+                    <a key={index} href={href} className="hover:underline text-lg" ref={el => navItems.current[index] = el}>{item}</a>
+                  );
+                })}
               </div>
             </div>
-
+           
             <div className="xs:flex items-center flex md:gap-10 gap-2">
               <button className="get-started-btn rounded-full border-solid border-2 py-2 px-4 md:px-8 text-white bg-pink-500 hover:bg-pink-600">
                 Get Started
@@ -103,9 +259,28 @@ function App() {
         >
           <div className="px-8">
             <div className="flex flex-col gap-8 font-bold tracking-wider">
-              {["Features", "Pricing", "Download", "Classic"].map((item, index) => (
-                <a key={index} href="#" className="mobile-nav-item">{item}</a>
-              ))}
+              {["Home", "Benefits", "Blog", "About Us"].map((item, index) => {
+                let href;
+                switch (item) {
+                  case "Home":
+                    href = "/";
+                    break;
+                  case "Benefits":
+                    href = "/benefits";
+                    break;
+                  case "Blog":
+                    href = "/blog";
+                    break;
+                  case "About Us":
+                    href = "/about-us";
+                    break;
+                  default:
+                    href = "#";
+                }
+                return (
+                  <a key={index} href={href} className="mobile-nav-item">{item}</a>
+                );
+              })}
             </div>
           </div>
         </div>
