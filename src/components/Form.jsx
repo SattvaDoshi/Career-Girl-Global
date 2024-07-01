@@ -40,7 +40,7 @@ const Form = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        'http://localhost:8000/register',
+        'https://career-girl-global.onrender.com/register',
         { name, email, country },
         {
           headers: {
