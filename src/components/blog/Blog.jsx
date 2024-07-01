@@ -4,12 +4,11 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([
-    { id: 1, title: 'Blog 1', content: 'Content 1' },
-    // ... add more blog objects
+    { id: 1, title: 'The Future of AI', content: 'Artificial Intelligence is rapidly evolving...' },
   ]);
   const [newBlog, setNewBlog] = useState({ title: '', content: '' });
   const [currentPage, setCurrentPage] = useState(1);
-  const blogsPerPage = 10;
+  const blogsPerPage = 2;
 
   const carouselItems = [
     { id: 1, image: 'path/to/image1.jpg', title: 'Slide 1' },
@@ -58,13 +57,11 @@ const Blog = () => {
           ))}
         </div>
         <div className="mt-4 flex justify-center">
-          {[...Array(Math.ceil(blogs.length / blogsPerPage))].map((_, i) => (
+          {[...Array(Math.ceil(blogs.length / blogsPerPage)).keys()].map((i) => (
             <button
               key={i}
               onClick={() => paginate(i + 1)}
-              className={`mx-1 px-3 py-1 border rounded ${
-                currentPage === i + 1 ? 'bg-blue-500 text-white' : ''
-              }`}
+              className={`mx-1 px-3 py-1 border rounded ${currentPage === i + 1 ? 'bg-blue-500 text-white' : ''}`}
             >
               {i + 1}
             </button>

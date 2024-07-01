@@ -1,16 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const Form = () => {
   const [showForm, setShowForm] = useState(false);
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [country, setCountry] = useState("")
   const formRef = useRef(null);
   const overlayRef = useRef(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowForm(true);
-    }, 10000); // 10 seconds
-
+    }, 10000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -18,7 +22,7 @@ const Form = () => {
     if (showForm) {
       gsap.set(overlayRef.current, { opacity: 0 });
       gsap.set(formRef.current, { scale: 0.8, opacity: 0 });
-      
+
       const tl = gsap.timeline();
       tl.to(overlayRef.current, { opacity: 1, duration: 0.3 })
         .to(formRef.current, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.7)" });
@@ -32,9 +36,29 @@ const Form = () => {
       .then(() => setShowForm(false));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
+    try {
+      const { data } = await axios.post(
+        'http://localhost:8000/register',
+        { name, email, country },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        }
+      )
+      setCountry('')
+      setName('')
+      setEmail('')
+      toast.success(data.message);
+      setShowForm(false)
+    }
+    catch (e) {
+      console.log(e);
+      toast.error(e.response.data.message)
+    }
+
   };
 
   if (!showForm) return null;
@@ -57,6 +81,8 @@ const Form = () => {
             <input
               type="text"
               id="name"
+              value={name}
+              onChange={e => setName(e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
               required
             />
@@ -66,15 +92,19 @@ const Form = () => {
             <input
               type="email"
               id="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
               required
             />
           </div>
           <div className="mb-6">
-            <label htmlFor="Country" className="block text-gray-700 mb-2">Country</label>
+            <label htmlFor="country" className="block text-gray-700 mb-2">Country</label>
             <input
               type="text"
-              id="Country"
+              id="country"
+              value={country}
+              onChange={e => setCountry(e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
               required
             />

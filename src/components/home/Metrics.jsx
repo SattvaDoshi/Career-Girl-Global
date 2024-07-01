@@ -29,40 +29,38 @@ const Metrics = () => {
 
     < >
            
-      <div className="flex flex-row justify-around items-center w-full max-w-8xl bg-white shadow-md rounded-lg p-10 bg-gradient-to-r from-pink-500 to-purple-300">
-           
-        <div className="flex flex-col items-center text-center mx-4 ">
+           <div className="flex flex-col md:flex-row justify-around items-center w-full max-w-8xl bg-white shadow-md rounded-lg p-10 bg-gradient-to-r from-pink-500 to-purple-300">
+  <div className="flex flex-col items-center text-center mx-4 my-4 md:my-0">
+    <span className="text-5xl font-bold">300+</span>
+    <span className="text-base mt-2">Content Posted</span>
+    <span className="text-base mt-2">The volume of valuable content</span>
+  </div>
+  <span className="text-2xl mx-4 hidden md:block">·</span>
+  <div className="flex flex-col items-center text-center mx-4 my-4 md:my-0">
+    <span className="text-5xl font-bold">38k</span>
+    <span className="text-base mt-2">Instagram Followers</span>
+    <span className="text-base mt-2">Across all our social media accounts</span>
+  </div>
+  <span className="text-2xl mx-4 hidden md:block">·</span>
+  <div className="flex flex-col items-center text-center mx-4 my-4 md:my-0">
+    <span className="text-5xl font-bold">150+</span>
+    <span className="text-base mt-2">Community Growth</span>
+    <span className="text-base mt-2">Number of active members in the community</span>
+  </div>
+  <span className="text-2xl mx-4 hidden md:block">·</span>
+  <div className="flex flex-col items-center text-center mx-4 my-4 md:my-0">
+    <span className="text-5xl font-bold">7</span>
+    <span className="text-base mt-2">Success Stories</span>
+    <span className="text-base mt-2">Number of success stories</span>
+  </div>
+  <span className="text-2xl mx-4 hidden md:block">·</span>
+  <div className="flex flex-col items-center text-center mx-4 my-4 md:my-0">
+    <span className="text-5xl font-bold">10</span>
+    <span className="text-base mt-2">Resource Downloads</span>
+    <span className="text-base mt-2">Resume templates and other resources downloaded</span>
+  </div>
+</div>
 
-          <span className="text-5xl font-bold">300+</span>
-          <span className="text-base mt-2">Content Posted</span>
-          <span className="text-base mt-2">the volume of valuable content</span>
-        </div>
-        <span className="text-2xl mx-4 hidden md:block">·</span>
-        <div className="flex flex-col items-center text-center mx-4">
-          <span className="text-5xl font-bold">38k</span>
-          <span className="text-base mt-2">Instagram Followers </span>
-          <span className="text-base mt-2">across all our social media accounts</span>
-        </div>
-        <span className="text-2xl mx-4 hidden md:block">·</span>
-        <div className="flex flex-col items-center text-center mx-4">
-          <span className="text-5xl font-bold">150+</span>
-          <span className="text-base mt-2">Community Growth</span>
-          <span className="text-base mt-2">Number of active members in the community</span>
-        </div>
-        <span className="text-2xl mx-4 hidden md:block">·</span>
-        <div className="flex flex-col items-center text-center mx-4">
-          <span className="text-5xl font-bold">7</span>
-          <span className="text-base mt-2">Success Stories</span>
-          <span className="text-base mt-2">Number of success stories</span>
-        </div>
-        <span className="text-2xl mx-4 hidden md:block">·</span>
-        <div className="flex flex-col items-center text-center mx-4">
-          <span className="text-5xl font-bold">10</span>
-          <span className="text-base mt-2">Resource Downloads</span>
-          <span className="text-base mt-2">resume templates and other resources
-downloaded.</span>
-        </div>
-      </div>
     </>
   );
 };
