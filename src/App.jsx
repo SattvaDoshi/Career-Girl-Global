@@ -22,7 +22,7 @@ function App() {
           <Route path='/benefits' element={<Benefits />} />
         </Routes>
         <Footer />
-        <Form />
+        {/* <Form /> */}
         <Toaster />
       </BrowserRouter>
 
