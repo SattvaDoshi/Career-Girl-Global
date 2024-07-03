@@ -5,36 +5,17 @@ import about from '../images/about Us.jpg';
 
 const Mission = () => {
   return (
-    <div className="min-h-screen bg-white-900 flex flex-col items-center">
-      {/* Navigation Bar
-      <nav className="w-full bg-white shadow-md py-4">
-        <div className="container mx-auto flex justify-between items-center px-6">
-          <div className="flex items-center">
-            <img src="path-to-logo.png" alt="Logo" className="h-10" />
-          </div>
-          <div className="flex space-x-8">
-            <a href="#" className="text-gray-900">Home</a>
-            <a href="#" className="text-gray-900">About</a>
-            <a href="#" className="text-gray-900">Contact</a>
-            <a href="#" className="text-gray-900">Login</a>
-          </div>
-        </div>
-      </nav> */}
+    <div className="min-h-screen bg-white-900 flex flex-col items-center bg-gradient-to-r from-pink-200 to-purple-200 ">
 
-      {/* Main Content */}
-      <div className="container mx-auto flex flex-col items-center justify-center mt-10 px-6">
-        <div className="bg-gradient-to-r from-pink-500 to-purple-200 p-8 rounded-lg shadow-lg w-full max-w-5xl">
+      <div className="container mx-auto flex flex-col items-center justify-center mt-24 px-6">
+        <div className="bg-pink-500 p-8 rounded-lg shadow-lg w-full max-w-5xl">
           <div className="flex items-center">
-            {/* <button className="bg-white text-gray-900 rounded-full p-2 shadow-md"> */}
-            {/* <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> */}
-            {/* <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path> */}
-            {/* </svg> */}
-            {/* </button> */}
-            <div className="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden mx-4 p-6 w-full">
-              <img src={about} alt="About Us" className="w-48 h-48 object-cover rounded-full shadow-md" />
+ 
+            <div className="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden mx-4 p-6 w-full ">
+              <img src="https://png.pngtree.com/png-vector/20190525/ourmid/pngtree-launchstartupshipshuttlemission-line-icon-png-image_1065231.jpg" alt="About Us" className="w-48 h-80 object-cover  shadow-md" />
               <div className="mt-4 md:mt-0 md:ml-6">
                 <h2 className="text-3xl font-bold text-gray-900">Mission</h2>
-                <p className="mt-2 text-gray-700">
+                <p className="mt-2 text-gray-700 ">
                   
                   At Career Girl Global, our mission is to ignite the potential of young women worldwide by
                   providing them with the essential tools, resources, and guidance to navigate their careers
@@ -70,3 +51,6 @@ const Mission = () => {
 };
 
 export default Mission;
+
+
+
