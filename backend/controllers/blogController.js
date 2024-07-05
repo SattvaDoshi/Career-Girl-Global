@@ -1,9 +1,9 @@
 import { Blog } from "../models/blogModel.js";
 
 const postBlog = async (req, res) => {
-    const { title, imgURL, description } = req.body;
+    const { title, imgURL, description,blogLink } = req.body;
 
-    if (!title || !imgURL || !description) {
+    if (!title || !imgURL || !description || !blogLink) {
         return res.status(400).json({
             success: false,
             message: "Please fill all the fields"
@@ -14,7 +14,8 @@ const postBlog = async (req, res) => {
         const newPost = await Blog.create({
             title,
             imgURL,
-            description
+            description,
+            blogLink
         });
 
         res.status(201).json({
@@ -34,15 +35,14 @@ const postBlog = async (req, res) => {
 const getallBlogs = async (req, res) => {
     try {
         const page = parseInt(req.query.page) || 1;
-        const limit = parseInt(req.query.limit) || 2;
+        const limit = 8;
         const skip = (page - 1) * limit;
 
         const query = Blog.find()
-            .select('title imgURL description createdAt')
+            .select('title imgURL description blogLink createdAt')
             .sort({ createdAt: -1 })
             .skip(skip)
-            .limit(limit)
-            .lean();
+            .limit(limit);
 
         const [blogs, total] = await Promise.all([
             query.exec(),
@@ -57,7 +57,7 @@ const getallBlogs = async (req, res) => {
                 blogs,
                 currentPage: page,
                 totalPages,
-                totalBlogs: total
+                total
             }
         });
     } catch (e) {

@@ -11,12 +11,12 @@ const CarouselCard = () => {
       ];
 
   return (
-    <section className="mb-8">
+    <section className="">
         <Carousel infiniteLoop autoPlay interval={3000} showThumbs={false}>
           {carouselItems.map((item) => (
             <div key={item.id} className='md:h-[70vh]'>
             <img src={`${item.image}`} alt={item.title} className="w-full h-full object-cover" />
-              <p className="legend">{item.title}</p>
+              
             </div>
           ))}
         </Carousel>

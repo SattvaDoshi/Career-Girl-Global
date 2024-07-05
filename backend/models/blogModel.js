@@ -12,6 +12,10 @@ const blogSchema = new Schema({
     description :{
         type: String,
         required: [true,'Description is required']
+    },
+    blogLink:{
+        type: String,
+        required: [true,'Blog Link is required']
     }
     }, 
     {timestamps: true}
