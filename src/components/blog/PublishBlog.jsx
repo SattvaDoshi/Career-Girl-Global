@@ -13,7 +13,7 @@ const PublishBlog = ({ onBlogAdded }) => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await axios.post('http://localhost:8000/blog', form);
+      await axios.post('https://career-girl-global.onrender.com/blog', form);
       onBlogAdded();
       setForm({ title: '', imgURL: '', description: '', blogLink: '' });
       toast.success("Blog added Successfully")

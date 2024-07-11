@@ -13,7 +13,7 @@ const BlogList = () => {
     const fetchBlogs = async (page) => {
         setLoading(true);
         try {
-            const response = await axios.get(`http://localhost:8000/blog?page=${page}&limit=${blogsPerPage}`);
+            const response = await axios.get(`https://career-girl-global.onrender.com/blog?page=${page}&limit=${blogsPerPage}`);
             setBlogs(response.data.data.blogs);
             setTotalPages(response.data.data.totalPages);
         } catch (error) {
@@ -39,7 +39,7 @@ const BlogList = () => {
             
             {loading ? (
                 <div className="flex justify-center items-center h-64">
-                    <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-purple-500"></div>
+                    <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-pink-600"></div>
                 </div>
             ) : (
                 <motion.div 

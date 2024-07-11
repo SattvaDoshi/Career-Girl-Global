@@ -1,3 +1,4 @@
+import heart from '../images/your-heart.jpeg';
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -65,9 +66,9 @@ const Services = () => {
             ref={el => cardsRef.current[index] = el}
             className="flex flex-col items-center bg-white shadow-lg rounded-2xl p-8 max-w-xs mx-auto"
           >
-            <div className="bg-gradient-to-r from-pink-500 to-purple-500 rounded-full p-2">
+            <div >
               <img
-                src="https://via.placeholder.com/100"
+                src={heart}
                 alt="Mentorship Programs"
                 className="rounded-full"
               />
