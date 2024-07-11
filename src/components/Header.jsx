@@ -3,6 +3,7 @@ import React, { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import {  Bars3Icon } from "@heroicons/react/24/outline";
 import logo from './images/your-logo.png';
+import { Link } from "react-router-dom";
 
 function App() {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -97,7 +98,7 @@ function App() {
                       href = "#";
                   }
                   return (
-                    <a key={index} href={href} className="hover:underline text-lg" ref={el => navItems.current[index] = el}>{item}</a>
+                    <Link key={index} to={href} className="hover:underline text-lg" ref={el => navItems.current[index] = el}>{item}</Link>
                   );
                 })}
               </div>
@@ -142,7 +143,7 @@ function App() {
                     href = "#";
                 }
                 return (
-                  <a key={index} href={href} className="mobile-nav-item">{item}</a>
+                  <Link key={index} to={href} className="mobile-nav-item">{item}</Link>
                 );
               })}
             </div>
