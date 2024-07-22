@@ -1,6 +1,5 @@
 import React from 'react'
 import CarouselCard from '../components/blog/CaroselCard'
-import PublishBlog from '../components/blog/PublishBlog'
 import BlogList from '../components/blog/BlogList'
 
 const Blog = () => {
@@ -9,7 +8,6 @@ const Blog = () => {
     <div>
       <CarouselCard/>
       <BlogList />
-      <PublishBlog />
     </div>
   )
 }

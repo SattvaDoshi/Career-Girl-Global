@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import BlogCard from './BlogCard';
 import axios from 'axios';
 import { motion } from 'framer-motion';
+import { URL, your_auth_token } from '../../const';
+import toast from 'react-hot-toast';
 
 const BlogList = () => {
     const [blogs, setBlogs] = useState([]);
@@ -13,7 +15,7 @@ const BlogList = () => {
     const fetchBlogs = async (page) => {
         setLoading(true);
         try {
-            const response = await axios.get(`https://career-girl-global.onrender.com/blog?page=${page}&limit=${blogsPerPage}`);
+            const response = await axios.get(`${URL}/blog?page=${page}&limit=${blogsPerPage}`);
             setBlogs(response.data.data.blogs);
             setTotalPages(response.data.data.totalPages);
         } catch (error) {
@@ -32,6 +34,26 @@ const BlogList = () => {
             setCurrentPage(newPage);
         }
     };
+
+    const handleDelete = async (id) => {
+        try {
+          const response = await fetch(`${URL}/delete/${id}`, {
+            method: 'DELETE',
+            headers: {
+              'Authorization': `Bearer ${your_auth_token}` // Add your authentication token here
+            }
+          });
+          if (response.ok) {
+            toast.success("Blog Deleted Successfully")
+            window.location.reload(); 
+          } else {
+            console.error('Failed to delete blog');
+            toast.error("Error in Deleting Blog")
+          }
+        } catch (error) {
+          console.error('Error deleting blog:', error);
+        }
+      };
     
     return (
         <div className="container mx-auto px-4 py-8 bg-gradient-to-r from-pink-200 to-purple-200 ">
@@ -55,7 +77,7 @@ const BlogList = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                         >
-                            <BlogCard blog={blog} />
+                            <BlogCard key={blog._id} blog={blog} onDelete={handleDelete} />
                         </motion.div>
                     ))}
                 </motion.div>

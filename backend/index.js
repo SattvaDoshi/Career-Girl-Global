@@ -1,10 +1,11 @@
 import express from 'express'
 import { config } from 'dotenv'
 import mongoose from 'mongoose';
-import { registerUser } from './controllers/userController.js';
 import morgan from 'morgan';
-import cors from 'cors'
-import { getallBlogs, postBlog } from './controllers/blogController.js';
+import cors from 'cors';
+import { registerUser } from './controllers/userController.js';
+import { deleteBlog, getallBlogs, postBlog } from './controllers/blogController.js';
+import { login, logout, register} from './controllers/adminController.js'
 
 config();
 const app = express();
@@ -23,5 +24,11 @@ app.listen(PORT, async()=>{
 })
 
 app.post('/register',registerUser)
+
 app.post('/blog',postBlog)
 app.get('/blog',getallBlogs)
+app.delete('/delete/:id',deleteBlog)
+
+app.post('/signup',register)
+app.post('/login',login)
+app.post('/logout',logout)

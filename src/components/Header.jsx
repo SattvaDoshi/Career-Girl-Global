@@ -105,7 +105,7 @@ function App() {
             </div>
            
             <div className="xs:flex items-center flex md:gap-10 gap-2">
-              <button className="get-started-btn rounded-full border-solid border-2 py-2 px-4 md:px-8 text-white bg-pink-500 hover:bg-pink-600">
+              <button className="get-started-btn rounded-full py-2 px-4 md:px-8 text-white bg-pink-500 hover:bg-pink-600">
                 Get Started
               </button>
 
@@ -120,10 +120,10 @@ function App() {
         <div
           ref={mobileMenuRef}
           className={`fixed z-40 w-full bg-gradient-to-r from-pink-200 to-purple-200 overflow-hidden 
-            flex flex-col lg:hidden gap-12 origin-top`}
+            flex flex-col lg:hidden gap-12 origin-top `}
         >
           <div className="px-8">
-            <div className="flex flex-col gap-8 font-bold tracking-wider">
+            <div className="flex flex-col gap-8 font-bold tracking-wider h-screen pt-4">
               {["Home", "Benefits", "Blog", "About Us"].map((item, index) => {
                 let href;
                 switch (item) {
@@ -143,7 +143,11 @@ function App() {
                     href = "#";
                 }
                 return (
-                  <Link key={index} to={href} className="mobile-nav-item">{item}</Link>
+                  <Link key={index} to={href} className="mobile-nav-item">
+                    <button onClick={()=>setToggleMenu(!toggleMenu)}>
+                      {item}
+                    </button>
+                  </Link>
                 );
               })}
             </div>

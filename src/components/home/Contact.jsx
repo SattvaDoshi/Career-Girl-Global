@@ -54,12 +54,14 @@ const Contact = () => {
 
   <div ref={sectionRef} className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
   <div className="flex flex-col max-w-5xl w-full bg-white shadow-md rounded-lg p-6 md:p-10">
-    <div ref={leftColumnRef} className="flex flex-row items-center justify-between w-full mb-4">
-      <div className="text-center mb-4">
-        <h2 className="text-3xl font-bold mb-2">Let's Work Together</h2>
-      </div>
-      <img src={logo} alt="Career Girl Global" className="h-40 mb-4 w-40" />
-    </div>
+  <div ref={leftColumnRef} className="flex flex-col sm:flex-row items-center justify-between w-full mb-8 px-4">
+  <div className="text-center sm:text-left mb-4 sm:mb-0 w-full sm:w-auto">
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Let's Work Together</h2>
+  </div>
+  <div className="w-full sm:w-auto flex justify-center sm:justify-end">
+    <img src={logo} alt="Career Girl Global" className="h-32 sm:h-40 w-auto object-contain" />
+  </div>
+</div>
     <form ref={formRef} className="space-y-4 w-full">
       <div className="flex flex-col md:flex-row md:space-x-4">
         <input 
