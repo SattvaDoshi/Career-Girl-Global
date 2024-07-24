@@ -3,6 +3,7 @@ import React, { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import logo from '../images/your-logo.png'; // Adjust the path as needed
 import backgroundImage from '../images/your-background.jpeg'; // Adjust the path as needed
+import { Link } from 'react-router-dom';
 
 const GirlsOnCampus = () => {
   const componentRef = useRef(null);
@@ -55,7 +56,7 @@ const GirlsOnCampus = () => {
                 supportive network that will help you navigate and excel in your professional journey.
               </p>
               <button className="animate-in hover-grow bg-pink-500 text-white px-8 py-2 rounded-full hover:bg-pink-600 transition-colors duration-300 text-lg">
-                <a href="/home">Join Us</a>
+                <a href=""><Link to={'/home'} >Join Us</Link></a>
               </button>
             </div>
             <div className="w-full lg:w-1/2 flex justify-center items-center">
