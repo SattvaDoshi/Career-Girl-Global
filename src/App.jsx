@@ -28,7 +28,7 @@ function App() {
           <Route path="/home" element={<Admin />} />
         </Routes>
         <Footer />
-        {/* <Form /> */}
+        <Form />
         <Toaster />
       </BrowserRouter>
 
