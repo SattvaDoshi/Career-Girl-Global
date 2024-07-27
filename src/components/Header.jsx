@@ -1,8 +1,6 @@
-
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import {  Bars3Icon } from "@heroicons/react/24/outline";
-import logo from './images/your-logo.png';
 import { Link } from "react-router-dom";
 
 function App() {
@@ -79,14 +77,14 @@ function App() {
               </div>
 
               <div className="hidden lg:flex gap-8 ">
-                {["Home", "Resources", "Blog", "About Us"].map((item, index) => {
+                {["Home", "Free-Resources", "Blog", "About Us"].map((item, index) => {
                   let href;
                   switch (item) {
                     case "Home":
                       href = "/";
                       break;
-                    case "Resources":
-                      href = "/benefits";
+                    case "Free-Resources":
+                      href = "/resources";
                       break;
                     case "Blog":
                       href = "/blog";
@@ -124,14 +122,14 @@ function App() {
         >
           <div className="px-8">
             <div className="flex flex-col gap-8 font-bold tracking-wider h-screen pt-4">
-              {["Home", "Benefits", "Blog", "About Us"].map((item, index) => {
+              {["Home", "Free-Resources", "Blog", "About Us"].map((item, index) => {
                 let href;
                 switch (item) {
                   case "Home":
                     href = "/";
                     break;
-                  case "Benefits":
-                    href = "/benefits";
+                  case "Free-Resources":
+                    href = "/resources";
                     break;
                   case "Blog":
                     href = "/blog";

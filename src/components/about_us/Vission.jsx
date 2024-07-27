@@ -6,13 +6,17 @@ import about from '../images/about Us.jpg';
 const Visssion = () => {
     return (
         <div className="min-h-screen bg-white-900 flex flex-col items-center bg-gradient-to-r from-pink-200 to-purple-200">
+    
+
+           
             <div className="container mx-auto flex flex-col items-center justify-center mt-40 px-6 ">
                 <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-5xl ">
-                    <div className="flex items-center">            
+                    <div className="flex items-center">
+                       
                         <div className="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden mx-4 p-6 w-full ">
                             <img src={about} alt="About Us" className="w-48 h-48 object-cover rounded-full shadow-md" />
                             <div className="mt-4 md:mt-0 md:ml-6">
-                                <h2 className="text-3xl font-bold text-gray-900">Vision</h2>
+                                <h2 className="text-3xl font-bold text-pink-700">Vision</h2>
                                 <p className="mt-2 text-gray-700">
 
                                     Our vision at Career Girl Global is to empower women worldwide to become influential

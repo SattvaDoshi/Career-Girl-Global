@@ -14,7 +14,7 @@ const Mission = () => {
             <div className="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden mx-4 p-6 w-full ">
               <img src="https://png.pngtree.com/png-vector/20190525/ourmid/pngtree-launchstartupshipshuttlemission-line-icon-png-image_1065231.jpg" alt="About Us" className="w-48 h-80 object-cover  shadow-md" />
               <div className="mt-4 md:mt-0 md:ml-6">
-                <h2 className="text-3xl font-bold text-gray-900">Mission</h2>
+                <h2 className="text-3xl font-bold text-pink-700">Mission</h2>
                 <p className="mt-2 text-gray-700 ">
 
                   At Career Girl Global, our mission is to ignite the potential of young women worldwide by

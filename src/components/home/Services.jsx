@@ -1,4 +1,7 @@
 import heart from '../images/your-heart.jpeg';
+import bow from '../images/your-bow.jpeg';
+import letter from '../images/letter.png';
+import ribbon from '../images/ribbon.png';
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -59,7 +62,7 @@ const Services = () => {
       </div>
       <h1 ref={titleRef} className="lg:text-6xl md:text-4xl text-3xl text-pink-500 font-bold mb-4">What we Bring to You ..</h1>
       <hr className="border-t-2 border-purple-100 w-16 mb-8" />
-      <div className="flex flex-col md:flex-row justify-center mt-8 mb-4 md:mb-16 gap-8">
+      <div className="flex flex-col md:flex-row justify-center mt-8 gap-8">
         {[1, 2, 3].map((_, index) => (
           <div 
             key={index} 
