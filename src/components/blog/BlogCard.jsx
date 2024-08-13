@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useAuth } from '../../context/AuthContext'; // Assuming you have an AuthContext
+import { useAuth } from '../../context/AuthContext'; 
 
 const BlogCard = ({ blog, onDelete }) => {
   const { isAuthenticated } = useAuth();
 
   const handleDelete = (e) => {
-    e.preventDefault(); // Prevent navigation
-    e.stopPropagation(); // Prevent event bubbling
+    e.preventDefault(); 
+    e.stopPropagation(); 
     if (window.confirm('Are you sure you want to delete this blog?')) {
       onDelete(blog._id);
     }
@@ -37,7 +37,7 @@ const BlogCard = ({ blog, onDelete }) => {
               {new Date(blog.createdAt).toLocaleDateString()}
             </span>
             <motion.span
-              className="text-purple-600 font-semibold text-sm"
+              className="text-pink-600 font-semibold text-sm"
               whileHover={{ x: 5 }}
             >
               Read More →

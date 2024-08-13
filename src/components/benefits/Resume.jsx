@@ -8,7 +8,7 @@ const ResumeCard = ({ title, description, pdfUrl, imageUrl }) => (
     <img src={imageUrl} alt="Resume Template" className="w-full h-48 object-cover mb-4 rounded-lg" />
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
     <p className="text-gray-700 mb-4 text-center">{description}</p>
-    <a href={pdfUrl} target="_blank" rel="noopener noreferrer" className="bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+    <a href={pdfUrl} target="_blank" rel="noopener noreferrer" className="bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition-colors">
       Download PDF
     </a>
   </div>

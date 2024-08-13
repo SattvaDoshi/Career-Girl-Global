@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { URL } from '../const';
 import toast from 'react-hot-toast';
+import axios from 'axios';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -16,23 +17,24 @@ function Login() {
   }
 
   const handleSubmit = async (e) => {
+
     e.preventDefault();
+    const loading = toast.loading("Logging Please.. Wait!!");
     try {
-      const response = await fetch(`${URL}/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
+      const response = await axios.post(`${URL}/login`, {
+        email,
+        password
+      }, {
+        headers: { 'Content-Type': 'application/json' }
       });
-      if (response.ok) {
-        const data = await response.json();
-        navigate('/home'); 
-        setLocalStorage(data.token);
-        toast.success("User Logged in Successfully")
-      } else {
-        console.error('Login failed:', await response.text());
+            
+      if (response.status === 200) {
+        navigate('/home');
+        setLocalStorage(response.data.token);
+        toast.success("User Logged in Successfully", { id: loading });
       }
     } catch (error) {
-      console.error('Login error:', error.message);
+      toast.error("Invalid Email or Password", { id: loading });
     }
   };
 

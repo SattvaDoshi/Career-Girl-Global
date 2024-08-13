@@ -40,7 +40,7 @@ const BlogList = () => {
           const response = await fetch(`${URL}/delete/${id}`, {
             method: 'DELETE',
             headers: {
-              'Authorization': `Bearer ${your_auth_token}` // Add your authentication token here
+              'Authorization': `Bearer ${your_auth_token}`
             }
           });
           if (response.ok) {
@@ -56,7 +56,7 @@ const BlogList = () => {
       };
     
     return (
-        <div className="container mx-auto px-4 py-8 bg-gradient-to-r from-pink-200 to-purple-200 ">
+        <div className="container min-w-full px-4 py-8 bg-gradient-to-r from-pink-200 to-purple-200 ">
             <h1 className="text-4xl font-bold text-center mb-12 text-pink-500">Our Latest Blogs</h1>
             
             {loading ? (
