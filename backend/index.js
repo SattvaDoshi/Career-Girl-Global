@@ -23,6 +23,12 @@ app.listen(PORT, async()=>{
     .catch((err)=>{console.log("Database Connection Failed : ",err);})
 })
 
+app.get('/testing',(req,res)=>{
+    res.json({
+        message:"Hello World"
+    })
+})
+
 app.post('/register',registerUser)
 
 app.post('/blog',postBlog)
