@@ -1,6 +1,5 @@
 import React ,{useEffect} from 'react'
 import HeroSection from '../components/home/HeroSection';
-import AboutSection from '../components/home/AboutSection';
 import JoinCommunity from '../components/home/Join';
 import Services from '../components/home/Services';
 import Contact from '../components/home/Contact';
@@ -32,7 +31,7 @@ const Home = () => {
         <Ebooks/>
         <Strap/>
       <Services/>
-      <Metrics/>
+      {/* <Metrics/> */}
       {/* <JoinCommunity /> */}
     {/* <AboutSection/> */}
     <Insta/>
