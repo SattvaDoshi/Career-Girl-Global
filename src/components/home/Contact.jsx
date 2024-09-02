@@ -1,104 +1,53 @@
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import logo from '../images/your-logo.png'; // Adjust the path as needed
+import React from 'react';
 
-gsap.registerPlugin(ScrollTrigger);
-
-const Contact = () => {
-  const sectionRef = useRef(null);
-  const leftColumnRef = useRef(null);
-  const formRef = useRef(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    const leftColumn = leftColumnRef.current;
-    const form = formRef.current;
-
-    gsap.fromTo(leftColumn.children, 
-      { opacity: 0, y: 50 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 1,
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: section,
-          start: "top 60%",
-          end: "top 30%",
-          scrub: 1,
-        }
-      }
-    );
-
-    gsap.fromTo(form.children, 
-      { opacity: 0, x: 50 },
-      { 
-        opacity: 1, 
-        x: 0, 
-        duration: 1.5,
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: section,
-          start: "top 50%",
-          end: "top 30%",
-          scrub: 1,
-        }
-      }
-    );
-
-  }, []);
-
+const WorkWithUs = () => {
   return (
-    
+    <div className="flex flex-col lg:flex-row min-h-screen bg-pink-50">
+      {/* Left Side - Form */}
+      <div className="flex flex-col justify-center items-center w-full lg:w-1/2 p-8 bg-white shadow-lg">
+        <h2 className="text-pink-600 text-4xl font-extrabold mb-10">Work With Us</h2>
+        <form className="w-full max-w-lg space-y-6">
+          <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4">
+            <input
+              type="text"
+              placeholder="First Name"
+              className="flex-1 w-full bg-gray-100 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-pink-300"
+            />
+            <input
+              type="text"
+              placeholder="Last Name"
+              className="flex-1 w-full bg-gray-100 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-pink-300"
+            />
+          </div>
+          <div>
+            <input
+              type="email"
+              placeholder="E-mail*"
+              className="w-full bg-gray-100 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-pink-300"
+            />
+          </div>
+          <div>
+            <textarea
+              placeholder="Leave us a message..*"
+              className="w-full bg-gray-100 border border-gray-300 rounded-md p-3 h-32 focus:outline-none focus:ring-2 focus:ring-pink-300"
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-pink-500 text-white font-semibold p-3 rounded-md hover:bg-pink-600 transition-all duration-300 ease-in-out shadow-md"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
 
-  <div ref={sectionRef} className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-  <div className="flex flex-col max-w-5xl w-full bg-white shadow-md rounded-lg p-6 md:p-10">
-    <div ref={leftColumnRef} className="flex flex-row items-center justify-between w-full mb-4">
-      <div className="text-center mb-4">
-        <h2 className="text-3xl font-bold mb-2 text-pink-500">Let's Work Together</h2>
+      {/* Right Side - Illustration */}
+      <div className="flex justify-center items-center w-full lg:w-1/2 bg-pink-500">
+        {/* Replace this with your actual illustration/image */}
+        <span className="text-black text-lg">DESKTOP ILLUSTRATION</span>
       </div>
-      <img src={logo} alt="Career Girl Global" className="h-40 mb-4 w-40" />
     </div>
-    <form ref={formRef} className="space-y-4 w-full">
-      <div className="flex flex-col md:flex-row md:space-x-4">
-        <input 
-          type="text" 
-          name="firstName" 
-          placeholder="First Name" 
-          className="w-full md:w-1/2 p-3 border rounded-md mb-3 md:mb-0" 
-        />
-        <input 
-          type="text" 
-          name="lastName" 
-          placeholder="Last Name" 
-          className="w-full md:w-1/2 p-3 border rounded-md" 
-        />
-      </div>
-      <input 
-        type="email" 
-        name="email" 
-        placeholder="Email *" 
-        className="w-full p-3 border rounded-md" 
-        required 
-      />
-      <textarea 
-        name="message" 
-        placeholder="Leave us a message... *" 
-        className="w-full p-3 border rounded-md" 
-        rows="4" 
-        required 
-      />
-      <button 
-        type="submit" 
-        className="w-full p-3 bg-pink-500 text-white rounded-md hover:bg-pink-600"
-      >
-        Submit
-      </button>
-    </form>
-  </div>
-</div>
   );
 };
 
-export default Contact;
+export default WorkWithUs;

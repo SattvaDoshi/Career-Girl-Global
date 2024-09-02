@@ -1,13 +1,13 @@
 import React from 'react'
 import Mission from '../components/about_us/Mission'
 import Visssion from '../components/about_us/Vission'
-import Strap from '../components/about_us/Strap'
+import AboutSection from '../components/home/AboutSection'
 
 const AboutUs = () => {
   return (
     <div>
+      <AboutSection/>
         <Mission/>
-        <Strap/>
         <Visssion/>    
     </div>
   )

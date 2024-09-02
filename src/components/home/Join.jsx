@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
+import join from '../images/join.jpeg';
 gsap.registerPlugin(ScrollTrigger);
 
 const JoinCommunity = () => {
@@ -60,7 +60,7 @@ const JoinCommunity = () => {
       </div>
       <div ref={imageRef} className="md:w-1/2 mt-8 md:mt-0 relative shadow-2xl overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+          src={join}
           alt="Laptops on a table"
           className="object-cover w-full h-full rounded-lg shadow-lg"
         />

@@ -1,7 +1,8 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import {  Bars3Icon } from "@heroicons/react/24/outline";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
+import logo from './images/your-logo.png';
 
 function App() {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -63,19 +64,14 @@ function App() {
 
   return (
     <div ref={app} className="app">
-      <nav className="bg-pink-200">
-        <div className="mx-auto">
+      <nav className="bg-pink-300">
+        <div className="mx-auto pt-4 pb-2">
           <div className="flex mx-auto justify-between w-5/6 ">
-            <div className="flex items-center gap-16 my-8">
-              <div>
-                <a
-                  href="/"
-                  className="logo flex gap-1 font-bold text-pink-500 items-center "
-                >                
-                  <span className="md:text-2xl text-lg">Career  Girl Global</span>
-                </a>
+          <div className="flex items-center space-x-4">
+                <img src={logo} alt="CGG Logo" className="w-48 h-25" />
               </div>
-
+            <div className="flex items-center gap-16 ">
+             
               <div className="hidden lg:flex gap-8 ">
                 {["Home", "Free-Resources", "Blog", "About Us"].map((item, index) => {
                   let href;
@@ -101,11 +97,8 @@ function App() {
                 })}
               </div>
             </div>
-           
+
             <div className="xs:flex items-center flex md:gap-10 gap-2">
-              <button className="get-started-btn rounded-full py-2 px-4 md:px-8 text-white bg-pink-500 hover:bg-pink-600">
-                Get Started
-              </button>
 
               <div className="lg:hidden flex items-center">
                 <button onClick={() => setToggleMenu(!toggleMenu)}>
@@ -142,7 +135,7 @@ function App() {
                 }
                 return (
                   <Link key={index} to={href} className="mobile-nav-item">
-                    <button onClick={()=>setToggleMenu(!toggleMenu)}>
+                    <button onClick={() => setToggleMenu(!toggleMenu)}>
                       {item}
                     </button>
                   </Link>
@@ -157,3 +150,13 @@ function App() {
 }
 
 export default App;
+
+<header className="flex items-center justify-between px-6 ">
+
+  <nav className="hidden md:flex space-x-8 text-gray-700">
+    <a href="#" className="hover:text-pink-600 transition duration-300">Home</a>
+    <a href="#" className="hover:text-pink-600 transition duration-300">Free Resources</a>
+    <a href="#" className="hover:text-pink-600 transition duration-300">Blog</a>
+    <a href="#" className="hover:text-pink-600 transition duration-300">About Us</a>
+  </nav>
+</header>

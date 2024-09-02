@@ -10,6 +10,7 @@ import Form from './components/Form';
 import { Toaster } from 'react-hot-toast';
 import Login from './pages/Login';
 import Admin from './pages/Admin';
+import Internships from './pages/Internships';
 
 function App() {
   
@@ -24,6 +25,7 @@ function App() {
           <Route path='/about-us' element={<AboutUs />} />
           <Route path='/blog' element={<Blog />} />
           <Route path='/resources' element={<Benefits />} />
+          <Route path='/internships' element={<Internships/>}/>
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Admin />} />
         </Routes>
