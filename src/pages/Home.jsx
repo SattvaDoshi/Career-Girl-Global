@@ -29,9 +29,9 @@ const Home = () => {
     <div>
         <HeroSection />
         <Ebooks/>
-        <Strap/>
+        {/* <Strap/> */}
       <Services/>
-      {/* <Metrics/> */}
+      <Metrics/>
       {/* <JoinCommunity /> */}
     {/* <AboutSection/> */}
     <Insta/>
