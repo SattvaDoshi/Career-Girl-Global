@@ -11,13 +11,11 @@ import { Toaster } from 'react-hot-toast';
 import Login from './pages/Login';
 import Admin from './pages/Admin';
 import Internships from './pages/Internships';
+import NotFound from './pages/NotFound'; 
 
 function App() {
-  
-
   return (
     <div className="App">
-
       <BrowserRouter>
         <Header />
         <Routes>
@@ -28,18 +26,14 @@ function App() {
           <Route path='/internships' element={<Internships/>}/>
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Admin />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
-        <Form />
+        {/* <Form /> */}
         <Toaster />
       </BrowserRouter>
-
-
     </div>
   );
 }
 
 export default App;
-
-
-

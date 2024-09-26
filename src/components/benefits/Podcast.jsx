@@ -66,7 +66,7 @@ const App = () => {
   return (
     <div className="min-h-screen bg-pink-100 py-16">
       <div className="container mx-auto px-4">
-        <h1 className="text-5xl font-bold text-center mt-8 mb-16 text-pink-700">PODCASTS</h1>
+        <h1 className="text-5xl font-bold text-center mt-8 mb-16 text-pink-700 " style={{ fontFamily: 'Ultra' }}>PODCASTS</h1>
         <div className="flex gap-8 overflow-x-auto py-8">
           {cards.map((card, index) => (
             <Card

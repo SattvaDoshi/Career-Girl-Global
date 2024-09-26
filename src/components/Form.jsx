@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { URL } from '../const';
 
 const Form = () => {
   const [showForm, setShowForm] = useState(false);
@@ -40,7 +41,7 @@ const Form = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        'https://career-girl-global.onrender.com/register',
+        `${URL}/register`,
         { name, email, country },
         {
           headers: {
@@ -65,7 +66,7 @@ const Form = () => {
 
   return (
     <div ref={overlayRef} className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div ref={formRef} className="bg-white rounded-lg p-8 max-w-md w-full relative">
+      <div ref={formRef} className="bg-white rounded-lg p-8 max-w-md w-full relative z-50">
         <button
           onClick={handleClose}
           className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"

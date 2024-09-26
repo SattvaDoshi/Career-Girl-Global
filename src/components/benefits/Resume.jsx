@@ -39,7 +39,7 @@ const App = () => {
   return (
     <div className="min-h-screen bg-pink-100 py-12">
       <div className="container mx-auto px-4">
-        <h1 className="text-5xl font-bold text-center mb-16 mt-10 text-pink-700">RESUME TEMPLATES</h1>
+        <h1 className="text-5xl font-bold text-center mb-16 mt-10 text-pink-700" style={{ fontFamily: 'Ultra' }}>RESUME TEMPLATES</h1>
         <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
           {resumes.map((resume, index) => (
             <ResumeCard

@@ -65,14 +65,13 @@ function App() {
   return (
     <div ref={app} className="app">
       <nav className="bg-pink-300">
-        <div className="mx-auto pt-4 pb-2">
-          <div className="flex mx-auto justify-between w-5/6 ">
-          <div className="flex items-center space-x-4">
-                <img src={logo} alt="CGG Logo" className="w-48 h-25" />
-              </div>
-            <div className="flex items-center gap-16 ">
-             
-              <div className="hidden lg:flex gap-8 ">
+        <div className="mx-auto pb-2">
+          <div className="flex mx-auto justify-between w-5/6">
+            <div className="flex items-center space-x-4">
+              <img src={logo} alt="CGG Logo" className="w-28 h-15" />
+            </div>
+            <div className="flex items-center gap-16">
+              <div className="hidden lg:flex gap-8" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                 {["Home", "Free-Resources", "Blog", "About Us"].map((item, index) => {
                   let href;
                   switch (item) {
@@ -99,7 +98,6 @@ function App() {
             </div>
 
             <div className="xs:flex items-center flex md:gap-10 gap-2">
-
               <div className="lg:hidden flex items-center">
                 <button onClick={() => setToggleMenu(!toggleMenu)}>
                   <Bars3Icon className="h-6" />
@@ -110,11 +108,10 @@ function App() {
         </div>
         <div
           ref={mobileMenuRef}
-          className={`fixed z-40 w-full bg-gradient-to-r from-pink-200 to-purple-200 overflow-hidden 
-            flex flex-col lg:hidden gap-12 origin-top `}
+          className={`fixed z-40 w-full bg-pink-300 overflow-hidden flex flex-col lg:hidden gap-12 origin-top`}
         >
           <div className="px-8">
-            <div className="flex flex-col gap-8 font-bold tracking-wider h-screen pt-4">
+            <div className="flex flex-col gap-8 font-bold tracking-wider h-screen pt-4" style={{ fontFamily: "'Montserrat', sans-serif" }}>
               {["Home", "Free-Resources", "Blog", "About Us"].map((item, index) => {
                 let href;
                 switch (item) {
@@ -151,12 +148,3 @@ function App() {
 
 export default App;
 
-<header className="flex items-center justify-between px-6 ">
-
-  <nav className="hidden md:flex space-x-8 text-gray-700">
-    <a href="#" className="hover:text-pink-600 transition duration-300">Home</a>
-    <a href="#" className="hover:text-pink-600 transition duration-300">Free Resources</a>
-    <a href="#" className="hover:text-pink-600 transition duration-300">Blog</a>
-    <a href="#" className="hover:text-pink-600 transition duration-300">About Us</a>
-  </nav>
-</header>

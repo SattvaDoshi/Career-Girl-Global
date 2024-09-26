@@ -11,11 +11,11 @@ const LandingPage = () => {
     >
       {/* Hero Section */}
       <div className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 lg:px-24 flex-grow">
-        <div className="max-w-3xl  pl-8 ">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-pink-600 mb-6 leading-tight">
+        <div className="max-w-3xl  pl-8">
+          <h1 className="text-2xl md:text-5xl lg:text-6xl font-extrabold text-pink-600 mb-6 leading-tight" style={{ fontFamily: "'Ultra', serif" }}>
             Empowering <br /> Women's Careers
           </h1>
-          <p className="text-gray-700 text-lg md:text-xl mb-8">
+          <p className="text-gray-700 text-lg md:text-xl mb-8" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             Welcome to CGG, a community where young women are empowered to achieve their career aspirations. 
             Join us and gain access to invaluable resources, career guidance, and a supportive network that 
             will help you navigate and excel in your professional journey.
@@ -25,8 +25,8 @@ const LandingPage = () => {
               href="https://www.instagram.com/careergirlglobal/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-pink-500 text-white px-12 py-3 rounded-full font-semibold flex items-center space-x-2
-               hover:bg-pink-600 transition duration-300"
+              className="bg-pink-500 text-white px-12 py-3 rounded-full font-semibold flex items-center space-x-2 hover:bg-pink-600 transition duration-300"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               <FontAwesomeIcon icon={faInstagram} className="text-lg" />
               <span>Instagram</span>
@@ -36,6 +36,7 @@ const LandingPage = () => {
               target="_blank" 
               rel="noopener noreferrer"
               className="border-2 border-pink-500 text-pink-500 px-12 py-3 rounded-full font-semibold flex items-center space-x-2 hover:bg-pink-500 hover:text-white transition duration-300"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               <FontAwesomeIcon icon={faLinkedin} className="text-lg" />
               <span>LinkedIn</span>
@@ -48,3 +49,4 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
+

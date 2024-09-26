@@ -1,12 +1,15 @@
 import React from 'react';
+import illustration from '../images/illustration.png'; // Update the path if necessary
 
 const WorkWithUs = () => {
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen bg-pink-50">
+    <div className="flex flex-col lg:flex-row min-h-[80vh] bg-pink-50">
       {/* Left Side - Form */}
       <div className="flex flex-col justify-center items-center w-full lg:w-1/2 p-8 bg-white shadow-lg">
-        <h2 className="text-pink-600 text-4xl font-extrabold mb-10">Work With Us</h2>
-        <form className="w-full max-w-lg space-y-6">
+        <h2 className="text-pink-600 text-4xl font-extrabold mb-10" style={{ fontFamily: 'Ultra' }}>
+          Work With Us
+        </h2>
+        <form className="w-full max-w-lg space-y-6" style={{ fontFamily: 'Montserrat' }}>
           <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4">
             <input
               type="text"
@@ -41,13 +44,19 @@ const WorkWithUs = () => {
         </form>
       </div>
 
-      {/* Right Side - Illustration */}
-      <div className="flex justify-center items-center w-full lg:w-1/2 bg-pink-500">
-        {/* Replace this with your actual illustration/image */}
-        <span className="text-black text-lg">DESKTOP ILLUSTRATION</span>
+      {/* Right Side - Image */}
+      <div className="flex justify-center items-center w-full lg:w-1/2 bg-pink-200 min-h-[80vh]">
+        <img
+          src={illustration}
+          alt="Illustration"
+          className="w-full h-auto object-cover"
+        />
       </div>
     </div>
   );
 };
 
 export default WorkWithUs;
+
+
+

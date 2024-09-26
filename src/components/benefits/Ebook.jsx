@@ -14,12 +14,12 @@ const EbookPromotion = () => {
             />
           </div>
           <div className="text-pink-600">
-            <h2 className="md:text-6xl text-3xl font-extrabold mb-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
+            <h2 className="md:text-6xl text-3xl font-extrabold mb-2" style={{ fontFamily: 'Ultra' }}>
               Our E-Book is on Air!!
             </h2>
             <button
               className="bg-pink-500 text-white py-3 px-8 rounded-full text-lg mt-4"
-              style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 'bold' }}
+              style={{ fontFamily: 'Montserrat' }}
             >
               Get yours now
             </button>

@@ -1,103 +1,34 @@
-import React from 'react';
-
-const internships = [
-  {
-    title: "Graphic Design Intern",
-    company: "North American Hockey League",
-    location: "Remote",
-    datePosted: "4 days ago",
-    duration: "6-12 months",
-    stipend: "$17-$20 per hour",
-  },
-  {
-    title: "Graphic Design Intern",
-    company: "North American Hockey League",
-    location: "Remote",
-    datePosted: "4 days ago",
-    duration: "6-12 months",
-    stipend: "$17-$20 per hour",
-  },
-  {
-    title: "Graphic Design Intern",
-    company: "North American Hockey League",
-    location: "Remote",
-    datePosted: "4 days ago",
-    duration: "6-12 months",
-    stipend: "$17-$20 per hour",
-  },
-  {
-    title: "Graphic Design Intern",
-    company: "North American Hockey League",
-    location: "Remote",
-    datePosted: "4 days ago",
-    duration: "6-12 months",
-    stipend: "$17-$20 per hour",
-  },
-  {
-    title: "Graphic Design Intern",
-    company: "North American Hockey League",
-    location: "Remote",
-    datePosted: "4 days ago",
-    duration: "6-12 months",
-    stipend: "$17-$20 per hour",
-  },
-  {
-    title: "Graphic Design Intern",
-    company: "North American Hockey League",
-    location: "Remote",
-    datePosted: "4 days ago",
-    duration: "6-12 months",
-    stipend: "$17-$20 per hour",
-  },
-  {
-    title: "Graphic Design Intern",
-    company: "North American Hockey League",
-    location: "Remote",
-    datePosted: "4 days ago",
-    duration: "6-12 months",
-    stipend: "$17-$20 per hour",
-  },
-  {
-    title: "Graphic Design Intern",
-    company: "North American Hockey League",
-    location: "Remote",
-    datePosted: "4 days ago",
-    duration: "6-12 months",
-    stipend: "$17-$20 per hour",
-  },
-  {
-    title: "Graphic Design Intern",
-    company: "North American Hockey League",
-    location: "Remote",
-    datePosted: "4 days ago",
-    duration: "6-12 months",
-    stipend: "$17-$20 per hour",
-  }, {
-    title: "Graphic Design Intern",
-    company: "North American Hockey League",
-    location: "Remote",
-    datePosted: "4 days ago",
-    duration: "6-12 months",
-    stipend: "$17-$20 per hour",
-  }, {
-    title: "Graphic Design Intern",
-    company: "North American Hockey League",
-    location: "Remote",
-    datePosted: "4 days ago",
-    duration: "6-12 months",
-    stipend: "$17-$20 per hour",
-  }, {
-    title: "Graphic Design Intern",
-    company: "North American Hockey League",
-    location: "Remote",
-    datePosted: "4 days ago",
-    duration: "6-12 months",
-    stipend: "$17-$20 per hour",
-  },
-  // More entries can be added here
-];
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { URL } from "../../const";
+import toast from 'react-hot-toast';
 
 const RemoteInternships = () => {
+  const [internships, setInternships] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const fetchInternships = async () => {
+    const loading = toast.loading("Loading Please Wait !!")
+    try {
+      const response = await axios.get(`${URL}/all-internships`, {
+        withCredentials: true
+      });
+      setInternships(response.data.internships);
+      toast.success("All Internships", { id: loading });
+    } catch (e) {
+      console.error('Error fetching internships:', e);
+    } 
+  };
+
+  useEffect(() => {
+    fetchInternships();
+  }, []);
+
+  const filteredInternships = internships.filter(internship =>
+    internship.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+
   return (
     <div className="bg-pink-100 min-h-screen p-6">
       <div className="text-center">
@@ -107,6 +38,8 @@ const RemoteInternships = () => {
             type="text"
             placeholder="Search for roles..."
             className="w-full py-2 px-4 rounded-full border-2 border-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-500"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
           <div className="absolute top-1/2 transform -translate-y-1/2 right-4 text-pink-500">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
@@ -116,28 +49,41 @@ const RemoteInternships = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {internships.map((internship, index) => (
-          <div key={index} className="bg-white border-2 border-pink-400 rounded-lg p-4 shadow-md">
-            <h2 className="text-pink-700 text-lg md:text-xl font-bold mb-2">{internship.title}</h2>
-            <p className="text-gray-700">{internship.company}</p>
-            <p className="text-gray-500">{internship.location}</p>
-            <p className="text-gray-500">{internship.datePosted}</p>
-            <p className="text-gray-500">{internship.duration}</p>
-            <p className="text-pink-700 font-bold mt-2">{internship.stipend}</p>
-            <div className="flex items-center justify-between mt-4">
-              <button className="text-pink-500 hover:text-pink-700">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-              </button>
-              <button className="bg-pink-500 text-white py-2 px-8 rounded-full text-xs md:text-sm hover:bg-pink-600">
-                Apply
-              </button>
+      {filteredInternships.length === 0 ? (
+        <div className="text-center mt-10">No internships found matching your search.</div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredInternships.map((internship) => (
+            <div key={internship._id} className="bg-white border-2 border-pink-400 rounded-lg p-4 shadow-md">
+              <h2 className="text-pink-700 text-lg md:text-xl font-bold mb-2">{internship.title}</h2>
+              <p className="text-gray-700">{internship.company}</p>
+              <p className="text-gray-500">{internship.mode}</p>
+              <p className="text-gray-500">Posted on: {new Date(internship.jobPostedOn).toLocaleDateString()}</p>
+              <p className="text-gray-500">Duration: {internship.duration}</p>
+              <p className="text-pink-700 font-bold mt-2">Salary: {internship.fixedSalary
+                      ? internship.fixedSalary
+                      : `${internship.salaryFrom} - ${internship.salaryTo}`}</p>
+              <div className="flex items-center justify-between mt-4">
+                <span className={`text-sm ${internship.expired ? 'text-red-500' : 'text-green-500'}`}>
+                  {internship.expired ? 'Expired' : 'Active'}
+                </span>
+                <a 
+                  href={internship.link.startsWith('http') ? internship.link : `https://${internship.link}`}
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="bg-pink-500 text-white py-2 px-8 rounded-full text-xs md:text-sm hover:bg-pink-600"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open(internship.link.startsWith('http') ? internship.link : `https://${internship.link}`, '_blank');
+                  }}
+                >
+                  Apply
+                </a>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

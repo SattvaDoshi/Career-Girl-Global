@@ -6,13 +6,20 @@ import cors from 'cors';
 import { registerUser } from './controllers/userController.js';
 import { deleteBlog, getallBlogs, postBlog } from './controllers/blogController.js';
 import { login, logout, register} from './controllers/adminController.js'
+import { DeleteIntenship, EditIntenship, getAllIntenship, postIntenship } from './controllers/internshipController.js';
 
 config();
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
-app.use(cors('*'));
+
+const corsOptions = {
+    origin: ['http://localhost:5173', 'https://career-girl-global.vercel.app'], 
+    credentials: true,
+  };
+  
+  app.use(cors(corsOptions));
 
 const PORT = process.env.PORT || 7000;
 app.listen(PORT, async()=>{
@@ -38,3 +45,8 @@ app.delete('/delete/:id',deleteBlog)
 app.post('/signup',register)
 app.post('/login',login)
 app.post('/logout',logout)
+
+app.post('/post-internship',postIntenship)
+app.get('/all-internships',getAllIntenship)
+app.put('/edit-internship/:id',EditIntenship)
+app.delete('/delete-internship/:id',DeleteIntenship)
