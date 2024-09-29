@@ -3,7 +3,7 @@ import { config } from 'dotenv'
 import mongoose from 'mongoose';
 import morgan from 'morgan';
 import cors from 'cors';
-import { registerUser } from './controllers/userController.js';
+import { contactUs, deleteForm, registerUser, sendMailer } from './controllers/basicController.js';
 import { deleteBlog, getallBlogs, postBlog } from './controllers/blogController.js';
 import { login, logout, register} from './controllers/adminController.js'
 import { DeleteIntenship, EditIntenship, getAllIntenship, postIntenship } from './controllers/internshipController.js';
@@ -36,12 +36,15 @@ app.get('/testing',(req,res)=>{
     })
 })
 
-app.post('/register',registerUser)
+app.post('/send-mail',sendMailer)
+app.post('/contact-us',contactUs)
+app.delete('/delete-form/:id',deleteForm)
 
 app.post('/blog',postBlog)
 app.get('/blog',getallBlogs)
 app.delete('/delete/:id',deleteBlog)
 
+app.post('/register',registerUser)
 app.post('/signup',register)
 app.post('/login',login)
 app.post('/logout',logout)

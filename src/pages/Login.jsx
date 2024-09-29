@@ -29,7 +29,7 @@ function Login() {
       });
             
       if (response.status === 200) {
-        navigate('/home');
+        navigate('/admin');
         setLocalStorage(response.data.token);
         toast.success("User Logged in Successfully", { id: loading });
       }
