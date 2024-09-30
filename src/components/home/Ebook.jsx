@@ -7,10 +7,10 @@ const EbookRegistration = () => {
       <div className="relative z-10 flex flex-col items-center justify-center">
         <div className="text-center mb-6">
           <h2 
-            className="text-pink-600 md:text-5xl text-3xl font-bold" 
-            style={{ fontFamily: "'Ultra', serif" }}
+            className="text-pink-500 md:text-6xl text-3xl font-bold" 
+            style={{ fontFamily: "'Abril FatFace', sans-serif" }}
           >
-            Pre-register For Our E-book
+            Get the highlights of our Ebook!
           </h2>
         </div>
         <div className="flex items-center mb-8">
@@ -24,7 +24,7 @@ const EbookRegistration = () => {
           </button>
         </div>
       </div>
-      <div className="relative md:right-11 ">
+      <div className="relative md:right-11">
         <div className="flex items-center justify-center">
           <div className="bg-pink-300 rounded-full md:h-[70vh] md:w-[30vw] h-[40vh] w-[70vw] flex items-center justify-center">
             <img

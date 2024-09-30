@@ -40,7 +40,24 @@ const registerUser = async (req, res) => {
             message: e.message
         })
     }
+}
 
+const allUsers = async (req, res, next) => {
+    try
+    {
+        const users = await User.find();
+
+        res.status(200).json({
+            success: true,
+            message: "All Users",
+            users
+        })
+    }
+    catch(e)
+    {
+        console.log(e);
+        return next(new AppError("Something Went wrong", 400));
+    }
 }
 
 const sendMailer = async (req, res) => {
@@ -92,6 +109,23 @@ const contactUs = async (req, res, next) => {
     } 
 }
 
+const contact = async (req, res, next) => {
+    try
+    {
+        const contact = await ContactUs.find();
+        res.status(200).json({
+            success: true,
+            message: "All Contacts",
+            contact
+        })
+    }
+    catch(error)
+    {
+        console.log(error);
+        return next(new AppError("Something Went wrong", 400));
+    }
+}
+
 const deleteForm = async (req, res, next) => {
     const { id } = req.params;
     try {
@@ -114,7 +148,9 @@ const deleteForm = async (req, res, next) => {
 
 export {
     registerUser,
+    allUsers,
     sendMailer,
+    contact,
     contactUs,
     deleteForm
 }

@@ -13,8 +13,8 @@ const EbookPromotion = () => {
               className="md:w-[40vw] md:h-[80vh] p-4 "
             />
           </div>
-          <div className="text-pink-600">
-            <h2 className="md:text-6xl text-3xl font-extrabold mb-2" style={{ fontFamily: 'Ultra' }}>
+          <div className="text-pink-500">
+            <h2 className="md:text-6xl text-3xl font-extrabold mb-2" style={{ fontFamily: 'Abril FatFace' }}>
               Our E-Book is on Air!!
             </h2>
             <button

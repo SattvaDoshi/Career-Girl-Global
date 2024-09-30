@@ -56,8 +56,8 @@ const BlogList = () => {
       };
     
     return (
-        <div className="container min-w-full px-4 py-8 bg-gradient-to-r from-pink-200 to-purple-200 ">
-            <h1 className="text-4xl font-bold text-center mb-12 text-pink-500">Our Latest Blogs</h1>
+        <div className="container min-w-full px-4 py-8 bg-pink-200 ">
+            <h1 className="text-5xl font-bold text-center mb-12 text-pink-500 " style={{ fontFamily: "'Abril Fatface', serif" }}>Our Latest Blogs</h1>
             
             {loading ? (
                 <div className="flex justify-center items-center h-64">
@@ -90,7 +90,7 @@ const BlogList = () => {
                         onClick={() => handlePageChange(number + 1)}
                         className={`px-4 py-2 rounded-full ${
                             currentPage === number + 1
-                                ? 'bg-pink-600 text-white'
+                                ? 'bg-pink-400 text-white'
                                 : 'bg-gray-200 text-gray-700 hover:bg-purple-100'
                         } transition duration-300 ease-in-out`}
                     >

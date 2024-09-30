@@ -1,4 +1,4 @@
-import heart from '../images/your-heart.jpeg';
+import heart from '../images/your-heart.png';
 import bow from '../images/your-bow.jpeg';
 import book from '../images/hardCoverBook.png';
 import letter from '../images/letter.png';
@@ -74,7 +74,7 @@ const Services = () => {
     },
     {
       image: heart,
-      title: 'Career Workshops',
+      title: 'Career Resources',
       description: 'Our experienced mentors provide guidance and support to help you navigate your early career challenges',
       link: '/career-workshops',
     },
@@ -89,8 +89,8 @@ const Services = () => {
       <div className="flex items-center mb-8"></div>
       <h1
         ref={titleRef}
-        className="lg:text-6xl md:text-4xl text-3xl text-pink-500 font-bold mb-4"
-        style={{ fontFamily: "'Ultra', serif" }}
+        className="lg:text-7xl md:text-4xl text-3xl text-pink-500 font-bold mb-4"
+        style={{ fontFamily: "'Abril FatFace', serif" }}
       >
         What we Bring to You ..
       </h1>

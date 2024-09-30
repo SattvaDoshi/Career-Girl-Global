@@ -17,18 +17,15 @@ const internshipSchema = new mongoose.Schema({
     required:[true,"Please Enter the type of Internship"]
   },
   fixedSalary: {
-    type: Number,
-    minLength: [4, "Salary must contain at least 4 digits"],
+    type: String,
     maxLength: [9, "Salary cannot exceed 9 digits"],
   },
   salaryFrom: {
-    type: Number,
-    minLength: [4, "Salary must contain at least 4 digits"],
+    type: String,
     maxLength: [9, "Salary cannot exceed 9 digits"],
   },
   salaryTo: {
-    type: Number,
-    minLength: [4, "Salary must contain at least 4 digits"],
+    type: String,
     maxLength: [9, "Salary cannot exceed 9 digits"],
   },
   duration:{

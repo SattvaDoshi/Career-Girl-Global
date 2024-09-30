@@ -52,11 +52,16 @@ const AboutSection = () => {
     <section ref={sectionRef} className="bg-pink-500 py-20">
       <div className="container mx-auto px-6 flex flex-col items-center">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-4xl md:flex">
-          <div ref={imageRef} className="md:w-1/2">
-            <img src={yourImage} alt="About" className="w-full h-full object-cover md:h-auto" />
+          <div ref={imageRef} className="md:w-1/2 h-auto">
+            <img 
+              src={yourImage} 
+              alt="About" 
+              className="w-full h-full object-cover md:h-auto" 
+              style={{ height: '100%', marginBottom: '0' }} // Added to ensure no space below the image
+            />
           </div>
           <div ref={contentRef} className="md:w-1/2 p-6">
-            <h2 className="text-3xl font-bold text-pink-600 mb-4" style={{ fontFamily: 'Ultra' }}>
+            <h2 className="text-3xl font-bold text-pink-600 mb-4" style={{ fontFamily: 'Abril FatFace' }}>
               About Founder
             </h2>
             <hr className="border-t-2 border-pink-500 w-12 mb-4" />
@@ -74,3 +79,4 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
+

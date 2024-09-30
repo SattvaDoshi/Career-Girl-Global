@@ -129,7 +129,7 @@ const PostInternship = () => {
             ) : salaryType === "Fixed Salary" ? (
               <input
                 className="appearance-none border rounded-lg w-full py-3 px-3 text-pink-900 border-pink-300 focus:outline-none focus:border-pink-500 mt-2"
-                type="number"
+                type="text"
                 placeholder="Enter Fixed Salary"
                 value={fixedSalary}
                 onChange={(e) => setFixedSalary(e.target.value)}
@@ -138,14 +138,14 @@ const PostInternship = () => {
               <div className="ranged_salary flex mt-2">
                 <input
                   className="appearance-none border rounded-lg w-1/2 py-3 px-3 text-pink-900 border-pink-300 focus:outline-none focus:border-pink-500 mr-2"
-                  type="number"
+                  type="text"
                   placeholder="Salary From"
                   value={salaryFrom}
                   onChange={(e) => setSalaryFrom(e.target.value)}
                 />
                 <input
                   className="appearance-none border rounded-lg w-1/2 py-3 px-3 text-pink-900 border-pink-300 focus:outline-none focus:border-pink-500"
-                  type="number"
+                  type="text"
                   placeholder="Salary To"
                   value={salaryTo}
                   onChange={(e) => setSalaryTo(e.target.value)}

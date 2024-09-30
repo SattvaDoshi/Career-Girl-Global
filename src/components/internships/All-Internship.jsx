@@ -32,7 +32,7 @@ const RemoteInternships = () => {
   return (
     <div className="bg-pink-100 min-h-screen p-6">
       <div className="text-center">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-pink-700 mb-6">Remote Internships</h1>
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-pink-500 mb-6" style={{ fontFamily: 'Abril FatFace' }}>Remote Internships</h1>
         <div className="relative max-w-lg mx-auto mb-10">
           <input
             type="text"
@@ -55,12 +55,12 @@ const RemoteInternships = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredInternships.map((internship) => (
             <div key={internship._id} className="bg-white border-2 border-pink-400 rounded-lg p-4 shadow-md">
-              <h2 className="text-pink-700 text-lg md:text-xl font-bold mb-2">{internship.title}</h2>
-              <p className="text-gray-700">{internship.company}</p>
-              <p className="text-gray-500">{internship.mode}</p>
-              <p className="text-gray-500">Posted on: {new Date(internship.jobPostedOn).toLocaleDateString()}</p>
-              <p className="text-gray-500">Duration: {internship.duration}</p>
-              <p className="text-pink-700 font-bold mt-2">Salary: {internship.fixedSalary
+              <h2 className="text-pink-500 text-lg md:text-xl font-bold mb-2" style={{ fontFamily: 'Abril FatFace' }}>{internship.title}</h2>
+              <p className="text-gray-700" style={{ fontFamily: 'Montserrat' }}>{internship.company}</p>
+              <p className="text-gray-500" style={{ fontFamily: 'Montserrat' }}>{internship.mode}</p>
+              <p className="text-gray-500" style={{ fontFamily: 'Montserrat' }}>Posted on: {new Date(internship.jobPostedOn).toLocaleDateString()}</p>
+              <p className="text-gray-500" style={{ fontFamily: 'Montserrat' }}>Duration: {internship.duration}</p>
+              <p className="text-pink-500 font-bold mt-2" style={{ fontFamily: 'Montserrat' }}>Salary: {internship.fixedSalary
                       ? internship.fixedSalary
                       : `${internship.salaryFrom} - ${internship.salaryTo}`}</p>
               <div className="flex items-center justify-between mt-4">

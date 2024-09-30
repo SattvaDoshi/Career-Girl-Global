@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter,  Navigate, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -17,6 +17,7 @@ import ContactData from './pages/admin/ContactData';
 import UserData from './pages/admin/UserData';
 import AdminHeader from './pages/admin/AdminHeader';
 import InternshipsData from './pages/admin/InternshipsData';
+import Form from './components/Form';
 
 
 function App() {
@@ -90,6 +91,7 @@ function App() {
 
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Form />
         <Footer />
         <Toaster />
       </BrowserRouter>

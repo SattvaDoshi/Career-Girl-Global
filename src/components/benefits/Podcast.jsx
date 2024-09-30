@@ -57,6 +57,7 @@ const App = () => {
       podcastUrl: 'https://open.spotify.com/show/4dipKcMG0IocnGsdRmB2nJ?si=Br7RUHIdT2SIJFwdvyLnQA',
     },
     {
+      title: '9 to 5ish',
       description: '9 to 5ish',
       thumbnailUrl: nine,
       podcastUrl: 'https://open.spotify.com/show/4enIO7fwakdsLYh7q9YMDz?si=GSewPNAqRmOJXsHVR564bw',
@@ -66,11 +67,11 @@ const App = () => {
   return (
     <div className="min-h-screen bg-pink-100 py-16">
       <div className="container mx-auto px-4">
-        <h1 className="text-5xl font-bold text-center mt-8 mb-16 text-pink-700 " style={{ fontFamily: 'Ultra' }}>PODCASTS</h1>
-        <div className="flex gap-8 overflow-x-auto py-8">
+        <h1 className="text-7xl font-bold text-center mt-8 mb-16 text-pink-500 " style={{ fontFamily: 'Abril FatFace' }}>PODCASTS</h1>
+        <div className="flex gap-8 overflow-x-auto py-8 custom-scrollbar">
           {cards.map((card, index) => (
             <Card
-              key={index}
+              key={index} 
               title={card.title}
               description={card.description}
               thumbnailUrl={card.thumbnailUrl}
@@ -79,6 +80,23 @@ const App = () => {
           ))}
         </div>
       </div>  
+
+      {/* Custom scrollbar styles */}
+      <style jsx>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          height: 12px;
+          background-color: #ffc0cb; /* Light pink for scrollbar track */
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background-color: #ff69b4; /* Bright pink for scrollbar handle */
+          border-radius: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background-color: #ff1493; /* Darker pink on hover */
+        }
+      `}</style>
     </div>
   );
 }

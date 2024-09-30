@@ -18,19 +18,13 @@ const App = () => {
       title: 'The Psychology of Career Decisions by Sharon Belden Castonguay',
       description: 'Step-by-Step Guide: How to...',
       thumbnailUrl: 'https://img.youtube.com/vi/4e6KSaCxcHs/hqdefault.jpg',
-      videoUrl: ' https://youtu.be/4e6KSaCxcHs?si=zPpuwXKFOuyS915h',
+      videoUrl: 'https://youtu.be/4e6KSaCxcHs?si=zPpuwXKFOuyS915h',
     },
     {
       title: ' Why We Have Too Few Women Leaders by Sheryl Sandberg',
       description: 'College Essay/Scholarship Essay...',
       thumbnailUrl: 'https://img.youtube.com/vi/18uDutylDa4/hqdefault.jpg',
-      videoUrl: ' https://youtu.be/18uDutylDa4?si=MTfg9Tfgek_1Utmn',
-    },
-    {
-      title: 'Three Questions to Unlock Your Authentic Career by Ashley Stahl',
-      description: 'Scholarship Essays templates...',
-      thumbnailUrl: 'https://img.youtube.com/vi/vMiSf7LpFQE/hqdefault.jpg',
-      videoUrl: ' https://youtu.be/vMiSf7LpFQE?si=USOLEWsTy79-ntiI',
+      videoUrl: 'https://youtu.be/18uDutylDa4?si=MTfg9Tfgek_1Utmn',
     },
     {
       title: ' Find Your Dream Job Without Ever Looking at Your Resume by Laura Berman Fortgang',
@@ -48,26 +42,21 @@ const App = () => {
       title: ' Six Habits That Will Make You More Confident by Emily Jaenson',
       description: 'Letter-of-recommendation...',
       thumbnailUrl: 'https://img.youtube.com/vi/IitIl2C3Iy8/hqdefault.jpg',
-      videoUrl: ' https://youtu.be/IitIl2C3Iy8?si=U4w4Ige0Z3sCaH3P',
+      videoUrl: 'https://youtu.be/IitIl2C3Iy8?si=U4w4Ige0Z3sCaH3P',
     },
     {
       title: 'The Science of Women Leadership by Alexis Kanda-Olmstead',
       description: 'Letter-of-recommendation...',
       thumbnailUrl: 'https://img.youtube.com/vi/FVzHBWoIGEw/hqdefault.jpg',
-      videoUrl: ' https://youtu.be/FVzHBWoIGEw?si=pXpEYfVTqnsOOEPO',
-    },    {
-      title: ' How to Figure Out What You Really Want by Ashley Stahl',
-      description: 'Letter-of-recommendation...',
-      thumbnailUrl: 'https://img.youtube.com/vi/bRtBHF-WPpM/hqdefault.jpg',
-      videoUrl: '  https://youtu.be/bRtBHF-WPpM?si=wFjdmpZnH9fwpjCq',
-    },
+      videoUrl: 'https://youtu.be/FVzHBWoIGEw?si=pXpEYfVTqnsOOEPO',
+    },  
   ];
 
   return (
     <div className="min-h-screen bg-pink-100 py-8">
       <div className="container mx-auto px-6">
-      <h1 className="text-5xl font-bold text-center mt-8 mb-16 text-pink-700" style={{ fontFamily: 'Ultra' }}>TEDTALKS</h1>
-        <div className="flex gap-8 overflow-x-auto py-8">
+        <h1 className="text-7xl font-bold text-center mt-8 mb-16 text-pink-500" style={{ fontFamily: 'AbrilFatFace ' }}>TEDTALKS</h1>
+        <div className="flex gap-8 overflow-x-auto py-8 custom-scrollbar">
           {cards.map((card, index) => (
             <Card
               key={index}
@@ -79,6 +68,22 @@ const App = () => {
           ))}
         </div>
       </div>
+      {/* Inline CSS for Scrollbar */}
+      <style jsx>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          height: 12px;
+          background-color: #f8d7da; /* Light pink for scrollbar track */
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background-color: #c51162; /* Bright pink for scrollbar handle */
+          border-radius: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background-color: #c51162; /* Darker pink on hover */
+        }
+      `}</style>
     </div>
   );
 }

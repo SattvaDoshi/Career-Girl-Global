@@ -2,17 +2,18 @@ import hero from '../images/womens.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import React from 'react';
+import heroSmall from '../images/womens_small.png';
 
 const LandingPage = () => {
   return (
     <div
-      className="bg-pink-300 min-h-[90vh] flex flex-col overflow-hidden bg-cover bg-center"
+      className="bg-pink-200 min-h-[90vh] flex flex-col overflow-hidden bg-cover bg-center"
       style={{ backgroundImage: `url(${hero})` }}
     >
       {/* Hero Section */}
       <div className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 lg:px-24 flex-grow">
         <div className="max-w-3xl  pl-8">
-          <h1 className="text-2xl md:text-5xl lg:text-6xl font-extrabold text-pink-600 mb-6 leading-tight" style={{ fontFamily: "'Ultra', serif" }}>
+          <h1 className="text-2xl md:text-5xl lg:text-7xl font-extrabold text-pink-500 mb-6 leading-tight" style={{ fontFamily: "'Abril Fatface', serif" }}>
             Empowering <br /> Women's Careers
           </h1>
           <p className="text-gray-700 text-lg md:text-xl mb-8" style={{ fontFamily: "'Montserrat', sans-serif" }}>
@@ -43,10 +44,21 @@ const LandingPage = () => {
             </a>
           </div>
         </div>
+<div className="mt-8 md:mt-0 max-w-md">
+{/* Small screen image */}
+<img
+  src={heroSmall}
+  alt="Women empowerment (mobile)"
+  className="w-full h-auto md:hidden"
+/>
+
+
+</div>
       </div>
     </div>
   );
 };
 
 export default LandingPage;
+
 
